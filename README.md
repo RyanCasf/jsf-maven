@@ -21,16 +21,13 @@ Sendo Classes do java que rodam no Server atendendo requests e responses (browse
 <img src="img/JakartaServlet.png">
 
 <h2>MVC</h2>
-<center>Model - View - Controler</center>
-<i>Model</i> - Entidades, classe de integração com os atributos no banco de dados;
-<i>View</i> - Interface, camada de visualização do usuário;
-<i>Controller</i> - Managed, classe de controle entre as requests e responses.
-
+<center>Model - View - Controler</center> <br>
+<p><i>Model</i> - Entidades, classe de integração com os atributos no banco de dados;</p>
+<p><i>View</i> - Interface, camada de visualização do usuário;</p>
+<p><i>Controller</i> - Managed, classe de controle entre as requests e responses.</p>
 <br>
 
-<b>Porject Struture</b>b
-
-
+<b>Porject Struture</b>
 * ( dinamic web project (configuration modify) + jdk + mojarra <.jar> )
 * ( maven project )
 - java
@@ -55,6 +52,8 @@ Programação OO para Eventos facilitando os componentes e abstraindo as conexõ
 	<version>2.2.20</version>
 </dependency>
 
+<br>
+
 <dependency>
 	<groupId>com.sun.faces</groupId>
 	<artifactId>jsf-api</artifactId>
@@ -64,11 +63,9 @@ Programação OO para Eventos facilitando os componentes e abstraindo as conexõ
 <h2>PRIMEFACES</h2>
 <p>Faz parte das <b>bibliotecas que enriquecem os componentes</b> do jsf para abstrair as dificuldades da visão.<br></p>
 
-
 <h2>REFERÊNCIAS</h2>
-Guia de <a href="https://www.devmedia.com.br/guia/jsf-javaserver-faces/38322">BASE DEVELOP.</a>
-
-<a href="https://www.devmedia.com.br/guia/jsf-javaserver-faces/38322">GUIA DE JSF</a>
-<a href="https://www.devmedia.com.br/cursos/java">CURSO DE JAVA</a>
-<a href="https://www.devmedia.com.br/guias/java">GUIAS DE ESTUDOS JAVA</a>
+Guia de <a href="https://www.devmedia.com.br/guia/jsf-javaserver-faces/38322">BASE DEVELOP.</a> <br> <br>
+<a href="https://www.devmedia.com.br/guia/jsf-javaserver-faces/38322">GUIA DE JSF</a> <br>
+<a href="https://www.devmedia.com.br/cursos/java">CURSO DE JAVA</a> <br>
+<a href="https://www.devmedia.com.br/guias/java">GUIAS DE ESTUDOS JAVA</a> <br>
 <a href="https://www.devmedia.com.br/guia/java-enterprise-edition-java-ee/34474">Java EE</a>

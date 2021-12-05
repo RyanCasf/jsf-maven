@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class TabelaHome implements Serializable
 {
+	private static final long serialVersionUID = 5171595881926606304L;
+	
 	private String header;
 	private String value;
 

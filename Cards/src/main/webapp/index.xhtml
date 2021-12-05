@@ -5,23 +5,16 @@
 	xmlns:p="http://primefaces.org/ui">
 	
 	<h:head>
-		<title>JSF - Myfaces Example</title>
+		<title>JSF</title>
 	</h:head>
 	
 	<h:body>
 	
-		<h:panelGroup>
-			<h:outputText value="Link " />
-			<a href="https://www.youtube.com/" target="_blank">aqui...</a>
-		</h:panelGroup>
-	
-		<p:separator />
-		
 		<p:panelGrid 
 			styleClass="ui-panel-blank"
 			layout="grid"
-			columnClasses="ui-grid-col-6,ui-grid-col-6"
-			columns="2">
+			columnClasses="ui-grid-col-12"
+			columns="1">
 		
 			<h:panelGroup>
 				<p:card>
@@ -35,6 +28,7 @@
 				    
 				    <f:facet name="subtitle">
 				    	<h:outputText value="#{managedBeanHome.subtitle}" />
+				    	<a href="https://www.youtube.com/" target="_blank">aqui...</a>
 				    </f:facet>
 				
 				    <f:facet name="footer">
@@ -44,46 +38,7 @@
 				</p:card>
 			</h:panelGroup>
 			
-			<h:panelGroup>
-				<p:card>
-					<f:facet name="header">
-						<h:outputText value="TITLE" />
-				    </f:facet>
-				    
-				    <f:facet name="title">
-				        Advanced Card
-				    </f:facet>
-				    <f:facet name="subtitle">
-				        Card subtitle
-				    </f:facet>
-				
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-				
-				    <f:facet name="footer">
-				        <p:commandButton icon="pi pi-check" value="Save" />
-				        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em" />
-				    </f:facet>
-				</p:card>
-			</h:panelGroup>
-			
 		</p:panelGrid>
 		
-		<p:separator />
-		
-		<h:dataTable 
-			value="#{tabelaBean.lista}" 
-			var="t">
-			
-			<p:column>
-				<f:facet name="header">Título</f:facet>
-				<h:outputText value="#{t.header}" />
-			</p:column>
-			
-			<p:column>
-				<f:facet name="header">Valor</f:facet>
-				<h:outputText value="#{t.value}" />
-			</p:column>
-			
-		</h:dataTable>
 	</h:body>
 </html>

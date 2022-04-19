@@ -2,17 +2,13 @@ package br.com.ryan.index;
 
 import java.io.Serializable;
 
-public class TabelaHome implements Serializable
-{
-	private static final long serialVersionUID = 5171595881926606304L;
-	
+public class TabelaHome implements Serializable {
 	private String header;
 	private String value;
 
 	public TabelaHome() {}
 	
-	public TabelaHome(String header, String value)
-	{
+	public TabelaHome(String header, String value) {
 		this.header = header;
 		this.value = value;
 	}

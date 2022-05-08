@@ -9,40 +9,80 @@
 	</h:head>
 	
 	<h:body>
+		<style type="text/css">
+		    .ui-panel, div.ui-state-hover {
+		        margin: 10px;
+		    }
+		
+		    .ui-dashboard-column {
+		        width: 220px;
+		    }
+		</style>
 	
-		<p:panelGrid 
-			styleClass="ui-panel-blank"
-			layout="grid"
-			columnClasses="ui-grid-col-12"
-			columns="1">
-		
-			<h:panelGroup>
-				<h:outputText value="#{tabelaBean.lista}" />
-			</h:panelGroup>
-		
-			<h:panelGroup>
-				<p:card>
-					<f:facet name="header">
-						<h:outputText value="TITLE" />
-				    </f:facet>
-				    
-				    <f:facet name="title">
-				    	<h:outputText value="#{managedBeanHome.title}" />
-			    	</f:facet>
-				    
-				    <f:facet name="subtitle">
-				    	<h:outputText value="#{managedBeanHome.subtitle}" />
-				    	<a href="https://www.youtube.com/" target="_blank">aqui...</a>
-				    </f:facet>
+		<h:form>
+			<p:panel header="Card" toggleable="true" collapsed="true">
+				<p:panelGrid 
+					columns="1"
+					layout="grid"
+					styleClass="ui-panel-blank"
+					columnClasses="ui-grid-col-12">
 				
-				    <f:facet name="footer">
-				        <p:commandButton icon="pi pi-check" value="Save" />
-				        <p:commandButton icon="pi pi-times" value="Cancel" style="margin-left:.5em;background-color:#607D8B;border-color:#607D8B" />
-				    </f:facet>
-				</p:card>
-			</h:panelGroup>
+					<h:panelGroup>
+						<p:card>
+						    <f:facet name="title">
+						    	<h:outputText value="#{managedBeanHome.title}" />
+					    	</f:facet>
+						    
+						    <f:facet name="subtitle">
+						    	<h:outputText value="#{managedBeanHome.subtitle}" />
+						    	<a href="https://www.youtube.com/" target="_blank">aqui...</a>
+						    </f:facet>
+						
+						    <f:facet name="footer">
+						        <p:commandButton 
+						        	process="@this"
+						        	update="@this"
+						        	icon="pi pi-check" 
+						        	value="Save" />
+						        
+						        <p:commandButton 
+						        	icon="pi pi-times" 
+						        	value="Cancel" 
+						        	style="margin-left:.5em;background-color:#607D8B;border-color:#607D8B" />
+						    </f:facet>
+						</p:card>
+					</h:panelGroup>
+					
+				</p:panelGrid>
+			</p:panel>
 			
-		</p:panelGrid>
-		
+			<p:separator />
+			
+			<p:panel header="EL" toggleable="true" collapsed="true">
+				<p:panelGrid 
+					columns="1"
+					layout="grid"
+					styleClass="ui-panel-blank"
+					columnClasses="ui-grid-col-12">
+					
+					<h:panelGroup>
+						<h:outputText value="#{beanHome.header}" />
+						<h:outputText value="#{beanHome.header ne '' ? ' S' : ' N'}" />
+					</h:panelGroup>
+					
+					<h:panelGroup>
+						<h:outputText value="#{managedBeanHome.title}" />
+					</h:panelGroup>
+					
+				</p:panelGrid>
+			</p:panel>
+			
+			<p:separator />
+			
+			<p:dashboard rendered="false" id="dynamic_dashboard" binding="#{managedBeanHome.dashboard}">
+				<p:ajax event="reorder" listener="#{managedBeanHome.handleReorder}" />
+			</p:dashboard>
+			
+		</h:form>
 	</h:body>
 </html>

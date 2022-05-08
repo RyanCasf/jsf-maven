@@ -1,4 +1,4 @@
-package br.com.ryan.index;
+package br.com.ryan.home;
 
 import java.io.Serializable;
 

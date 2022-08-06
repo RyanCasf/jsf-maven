@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head><title>JSF</title></h:head>
+	<h:body>
+		<p:panel header="Card" toggleable="true" collapsed="true">
+			<p:panelGrid 
+				columns="1"
+				layout="grid"
+				styleClass="ui-panel-blank"
+				columnClasses="ui-grid-col-12">
+			
+				<h:panelGroup>
+					<p:card>
+					    <f:facet name="title">
+					    	<h:outputText value="#{managedBeanHome.title}" />
+				    	</f:facet>
+					    
+					    <f:facet name="subtitle">
+					    	<h:outputText value="#{managedBeanHome.subtitle}" />
+					    	<a href="https://www.youtube.com/" target="_blank">aqui...</a>
+					    </f:facet>
+					
+					    <f:facet name="footer">
+					        <p:commandButton 
+					        	process="@this"
+					        	update="@this"
+					        	icon="pi pi-check" 
+					        	value="Save" />
+					        
+					        <p:commandButton 
+					        	icon="pi pi-times" 
+					        	value="Cancel" 
+					        	style="margin-left:.5em;background-color:#607D8B;border-color:#607D8B" />
+					    </f:facet>
+					</p:card>
+				</h:panelGroup>
+				
+			</p:panelGrid>
+		</p:panel>
+	</h:body>
+</html>

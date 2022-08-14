@@ -24,24 +24,12 @@
 					<ui:include src="card.xhtml" />
 				</p:tab>	
 				
-				<p:tab title="A">
-					
-				</p:tab>
-				
-				<p:tab title="B">
-					
-				</p:tab>
-				
-				<p:tab title="C">
-					
-				</p:tab>
+				<p:tab title="Dashboard">
+					<p:dashboard id="dynamic_dashboard" binding="#{dashManager.dashboard}">
+						<p:ajax event="reorder" listener="#{dashManager.handleReorder}" />
+					</p:dashboard>	
+ 				</p:tab>
 			</p:tabView>
-			
-			<p:separator />
-			
-			<p:dashboard id="dynamic_dashboard" binding="#{managedBeanHome.dashboard}">
-				<p:ajax event="reorder" listener="#{managedBeanHome.handleReorder}" />
-			</p:dashboard>
 			
 		</h:form>
 	</h:body>

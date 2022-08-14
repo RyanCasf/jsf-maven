@@ -2,8 +2,8 @@ package br.com.ryan.home;
 
 import java.io.Serializable;
 
-import javax.annotation.ManagedBean;
 import javax.faces.application.Application;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.component.html.HtmlOutputText;
 import javax.faces.context.FacesContext;
@@ -18,12 +18,12 @@ import org.primefaces.model.DefaultDashboardColumn;
 import org.primefaces.model.DefaultDashboardModel;
 
 @ManagedBean @ViewScoped
-public class DashboardManager implements Serializable {
+public class DashManager implements Serializable {
+	private static final long serialVersionUID = -3639372702849016278L;
 	
-	private static final long serialVersionUID = -5295560900070361448L;
 	private Dashboard dashboard;
 	
-	public DashboardManager() {
+	public DashManager() {
 		FacesContext fc = FacesContext.getCurrentInstance();
 		Application application = fc.getApplication();
 

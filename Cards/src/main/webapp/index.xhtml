@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="pt-br" 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -38,7 +39,7 @@
 			
 			<p:separator />
 			
-			<p:dashboard rendered="false" id="dynamic_dashboard" binding="#{managedBeanHome.dashboard}">
+			<p:dashboard id="dynamic_dashboard" binding="#{managedBeanHome.dashboard}">
 				<p:ajax event="reorder" listener="#{managedBeanHome.handleReorder}" />
 			</p:dashboard>
 			

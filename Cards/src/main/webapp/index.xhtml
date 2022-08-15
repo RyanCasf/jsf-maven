@@ -25,9 +25,7 @@
 				</p:tab>	
 				
 				<p:tab title="Dashboard">
-					<p:dashboard id="dynamic_dashboard" binding="#{dashManager.dashboard}">
-						<p:ajax event="reorder" listener="#{dashManager.handleReorder}" />
-					</p:dashboard>	
+					<ui:include src="dashboard.xhtml" />	
  				</p:tab>
 			</p:tabView>
 			

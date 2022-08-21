@@ -19,15 +19,21 @@
 		</style>
 	
 		<h:form>
-			<p:tabView dynamic="true" cache="true" orientation="left">
-				<p:tab title="Card">
-					<ui:include src="card.xhtml" />
-				</p:tab>	
+			<p:panelGrid 
+				columns="2" 
+				layout="grid" 
+				styleClass="ui-panelgrid-blank" 
+				columnClasses="ui-grid-col-8,ui-grid-col-4">
+			
+				<h:panelGroup id="content">
+					<ui:include src="content.xhtml" />
+				</h:panelGroup>
 				
-				<p:tab title="Dashboard">
-					<ui:include src="dashboard.xhtml" />	
- 				</p:tab>
-			</p:tabView>
+				<h:panelGrid id="config">
+					<ui:include src="config/pesquisar.xhtml" />
+				</h:panelGrid>
+				
+			</p:panelGrid>
 			
 		</h:form>
 	</h:body>

@@ -17,6 +17,8 @@ import org.primefaces.model.DashboardModel;
 import org.primefaces.model.DefaultDashboardColumn;
 import org.primefaces.model.DefaultDashboardModel;
 
+import br.com.ryan.config.RealTime;
+
 @ManagedBean @ViewScoped
 public class DashManager implements Serializable {
 	private static final long serialVersionUID = -3639372702849016278L;
@@ -24,6 +26,8 @@ public class DashManager implements Serializable {
 	private Dashboard dashboard;
 	
 	public DashManager() {
+		RealTime.inicialize("Construtor do ", "DashManager");
+		
 		FacesContext fc = FacesContext.getCurrentInstance();
 		Application application = fc.getApplication();
 
@@ -55,14 +59,17 @@ public class DashManager implements Serializable {
 	}
 	
 	public void handleReorder(DashboardReorderEvent event) {
+		RealTime.inicialize("Evento.: ", "DashboardReorderEvent");
 		JOptionPane.showMessageDialog(null, event);
 	}
 	
 	public Dashboard getDashboard() {
+		RealTime.inicialize("GET DO ", "Dashboard");
 		return dashboard;
 	}
 
 	public void setDashboard(Dashboard dashboard) {
+		RealTime.inicialize("SET DO ", "Dashboard");
 		this.dashboard = dashboard;
 	}
 }

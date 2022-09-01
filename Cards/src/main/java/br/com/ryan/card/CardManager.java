@@ -12,16 +12,16 @@ public class CardManager implements Serializable {
 	private static final long serialVersionUID = 6529389085942394974L;
 	
 	public CardManager() {
-		RealTime.inicialize("construtor do ", getClass().getName());
+		RealTime.inicialize("Construtor", "CardManager");
 	}
 	
 	public String getTitle() {
-		RealTime.inicialize("GET DO ", "Título");
+		RealTime.inicialize("GET", "Título");
 		return "Gerente";
 	}
 
 	public String getSubtitle() {
-		RealTime.inicialize("GET DO ", "Subtítulo");
+		RealTime.inicialize("GET", "Subtítulo");
 		return "Gerência geral";
 	}
 }

@@ -12,7 +12,7 @@
 		<p:dataTable
 			var="r"
 			scrollable="true"
-			scrollHeight="500"
+			scrollHeight="350"
 			id="listaChamadas"
 			value="#{realTimeManager.chamadas}">
 			
@@ -31,7 +31,7 @@
 		<h:panelGroup layout="block" style="text-align:center">
 			<p:commandButton
 				value="Limpar"
-				icon="ui-icon-trash"
+				icon="pi pi-trash"
 				update="listaChamadas"
 				action="#{realTimeManager.limparChamadas}" />
 		</h:panelGroup>

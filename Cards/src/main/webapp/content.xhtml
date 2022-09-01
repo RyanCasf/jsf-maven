@@ -9,14 +9,18 @@
 	<h:head><title>JSF</title></h:head>
 	<h:body>
 		
-		<p:tabView dynamic="true" cache="true" orientation="left">
+		<p:tabView
+			dynamic="true"
+			orientation="left">
+			
 			<p:tab title="Card">
 				<ui:include src="card.xhtml" />
-			</p:tab>	
+			</p:tab>
 			
 			<p:tab title="Dashboard">
-				<ui:include src="dashboard.xhtml" />	
-				</p:tab>
+				<ui:include src="dashboard.xhtml" />
+			</p:tab>
+			
 		</p:tabView>	
 	
 	</h:body>

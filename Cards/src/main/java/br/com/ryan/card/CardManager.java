@@ -1,4 +1,4 @@
-package br.com.ryan.home;
+package br.com.ryan.card;
 
 import java.io.Serializable;
 

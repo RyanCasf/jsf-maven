@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fetch {
+	
 	private Fetch() {
-		throw new IllegalStateException("Utility class");
+		throw new IllegalStateException("Classe utilitária!");
     }
 	
 	public static <E> List<E> fetchList(Class<E> clazz, int size) {

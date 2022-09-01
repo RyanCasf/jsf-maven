@@ -1,21 +1,26 @@
 package br.com.ryan.config;
 
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RealTime {
-	
-	private static Map<String, String> chamadas = new Hashtable<String, String>();
+	private static List<RealTimeModel> chamadas = new ArrayList<RealTimeModel>();
 	
 	private RealTime() {
-		throw new IllegalStateException("Classe Utilitária");
+		throw new IllegalStateException("Classe Utilitária!");
 	}
 	
 	public static synchronized void inicialize(String titulo, String chave) {
-		chamadas.put((titulo != null ? titulo.toUpperCase() : ""), (chave != null ? chave : ""));
+		chamadas.add(new RealTimeModel((titulo != null ? titulo.toUpperCase() : ""), (chave != null ? chave : "")));
 	}
 
-	public static Map<String, String> getChamadas() {
+	public static List<RealTimeModel> getChamadas() {
 		return chamadas;
+	}
+	
+	public static void limpar() {
+		if (chamadas != null && !chamadas.isEmpty()) {
+			chamadas.clear();
+		}
 	}
 }

@@ -120,33 +120,40 @@
 				};
 		</script>
 	
-		<p:panelGrid 
-			columns="2"
-			layout="grid"
-			styleClass="ui-panel-blank">
-		
-			<h:panelGroup>
-				<h:outputText value="Data:" style="font-weight: bold;display: grid;" />
-				<p:calendar
-					locale="pt_BR"
-					pattern="dd/MM/yyyy"
-					value="#{dataManager.dataPadrao}" />
-			</h:panelGroup>
-		
-		</p:panelGrid>
-		
-		<h:panelGroup layout="block" style="text-align:center">
-			<p:commandButton
-				iconPos="rtl"
-				update="impressaoData"
-				value="Imprimir Valores" />
-		</h:panelGroup>
+		<h:form id="formularioData">
+			<p:panelGrid 
+				columns="2"
+				layout="grid"
+				styleClass="ui-panel-blank">
 			
-		<h:panelGroup id="impressaoData">
-			<h:outputText value="#{dataManager.dataPadrao}">
-				<f:convertDateTime type="data" pattern="dd/MM/yyyy" />
-			</h:outputText>
-		</h:panelGroup>
+				<h:panelGroup>
+					<h:outputText value="Data:" style="font-weight: bold;display: grid;" />
+					<p:calendar
+						locale="pt_BR"
+						pattern="dd/MM/yyyy"
+						value="#{dataManager.dataPadrao}">
+						
+						<p:ajax  process="@this" />
+					</p:calendar>
+				</h:panelGroup>
+			
+			</p:panelGrid>
+			
+			<p:separator />
+			
+			<h:panelGroup layout="block" style="text-align:center">
+				<p:commandButton
+					iconPos="rtl"
+					update="impressaoData"
+					value="Imprimir Valores" />
+			</h:panelGroup>
+				
+			<h:panelGroup id="impressaoData">
+				<h:outputText value="#{dataManager.dataPadrao}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+			</h:panelGroup>
+		</h:form>
 		
 	</h:body>
 </html>

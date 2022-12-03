@@ -69,3 +69,12 @@ Guia de <a href="https://www.devmedia.com.br/guia/jsf-javaserver-faces/38322">BA
 <a href="https://www.devmedia.com.br/cursos/java">CURSO DE JAVA</a> <br>
 <a href="https://www.devmedia.com.br/guias/java">GUIAS DE ESTUDOS JAVA</a> <br>
 <a href="https://www.devmedia.com.br/guia/java-enterprise-edition-java-ee/34474">Java EE</a>
+
+<br />
+
+<pre>
+Realizador:
+° RYAN CASTRO FERREIRA.
+<b style="color: blue;">LinkdIn </b>- <a href="https://www.linkedin.com/in/ryan-castro-ferreira">https://www.linkedin.com/in/ryan-castro-ferreira/</a>
+<b style="color: red;">Email </b>- ryancasf@gmail.com
+</pre>

@@ -6,19 +6,20 @@
     </head>
     <body>
         <h1>Formulário de cadastro em Servlet!</h1>
+        <hr />
         
         <form action="servlet/boasvindas" method="post">
-            <fieldset style="border-radius:200px">
+            <fieldset style="border-radius:20px">
                 <legend>Preencha o(s) campo(s) abaixo</legend>
-                <label for="txtNome">Nome:</label>
-                <input name="nome" id="txtNome" />
+                <label for="txtNome" style="display:block;font-weight:bold">Nome:</label>
+                <input name="nome" id="txtNome" style="border-radius:5px;width:98%" />
                 <br />
             </fieldset>
             
             <hr />
             <div style="display:block;text-align:center">
             	<input 
-            		style="background-color:#33E9FF;border: 1px solid #24B0C1;border-radius:20px;width:250px;heigth:30px"
+            		style="background-color:#33E9FF;border: 1px solid #24B0C1;border-radius:20px;width:200px;height:50px"
             		type="submit" 
             		value="Enviar" />
             </div>

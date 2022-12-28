@@ -141,18 +141,6 @@
 			
 			<p:separator />
 			
-			<h:panelGroup layout="block" style="text-align:center">
-				<p:commandButton
-					iconPos="rtl"
-					update="impressaoData"
-					value="Imprimir Valores" />
-			</h:panelGroup>
-				
-			<h:panelGroup id="impressaoData">
-				<h:outputText value="#{dataManager.dataPadrao}">
-					<f:convertDateTime pattern="dd/MM/yyyy" />
-				</h:outputText>
-			</h:panelGroup>
 		</h:form>
 		
 	</h:body>

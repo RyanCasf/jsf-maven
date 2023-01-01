@@ -8,20 +8,31 @@
 	
 	<h:head><title>JSF</title></h:head>
 	<h:body>
-		<p:schedule 
-			value="#{planilhaManager.eventModel}" 
-			timeZone="#{planilhaManager.serverTimeZone}" 
-			clientTimeZone="#{planilhaManager.serverTimeZone}">
-        	
-        	
-        	    
-        </p:schedule>
+		<h:form>
+			<p:messages id="messages" closable="true" />
+			<p:schedule 
+				id="schedule"
+				value="#{planilhaManager.eventModel}" 
+				timeZone="#{planilhaManager.serverTimeZone}" 
+				clientTimeZone="#{planilhaManager.serverTimeZone}">
+				
+		       	<p:ajax event="dateSelect" listener="#{planilhaManager.onDateSelect}" update="messages" oncomplete="PF('dlgEvento').show();" />
+		        <p:ajax event="eventSelect" listener="#{planilhaManager.onEventSelect}" update="messages" oncomplete="PF('dlgEvento').show();" />
+		        <p:ajax event="eventMove" listener="#{planilhaManager.onEventMove}" update="messages" />
+		       </p:schedule>
         
-        <!-- 
-        <p:ajax event="dateSelect" listener="#{scheduleJava8View.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
-        <p:ajax event="eventSelect" listener="#{scheduleJava8View.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
-        <p:ajax event="eventMove" listener="#{scheduleJava8View.onEventMove}" update="messages" />
-        <p:ajax event="eventResize" listener="#{scheduleJava8View.onEventResize}" update="messages" />
-         -->
+        	<p:dialog
+        		width="30%"
+        		modal="true"
+        		dynamic="true"
+        		header="Evento"
+        		widgetVar="dlgEvento">
+        		
+        		<h:panelGroup>
+        			<h:outputText value="Teste..." />
+        		</h:panelGroup>
+        	</p:dialog>
+        	
+        </h:form>
 	</h:body>
 </html>

@@ -1,4 +1,4 @@
-package br.com.ryan.dash;
+package br.com.ryan.dashboard;
 
 import java.io.Serializable;
 

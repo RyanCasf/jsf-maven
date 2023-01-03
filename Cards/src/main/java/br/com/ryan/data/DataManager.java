@@ -1,4 +1,4 @@
-package br.com.ryan.home;
+package br.com.ryan.data;
 
 import java.io.Serializable;
 import java.util.Date;

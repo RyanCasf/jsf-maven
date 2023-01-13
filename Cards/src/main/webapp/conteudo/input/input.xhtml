@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head><title>JSF</title></h:head>
+	<h:body>
+		<h:form>
+			<p:panelGrid 
+				columns="1"
+				layout="grid">
+				
+				<h:panelGroup>
+					<h5>Número:</h5>
+					<p:spinner value="#{spinnerView.number1}"/>
+				</h:panelGroup>
+				
+				<h:panelGroup>
+					<h5>Escrita de lista:</h5>
+		    		<p:chips />
+				</h:panelGroup>
+				
+				<h:panelGroup>
+					<h5>(Separação também por vírgula após o 'Enter'):</h5>
+		    		<p:chips widgetVar="wgtPaste" addOnPaste="true" separator="," />
+				</h:panelGroup>
+				
+			</p:panelGrid>
+		
+		    <p:separator />
+        </h:form>
+	</h:body>
+</html>

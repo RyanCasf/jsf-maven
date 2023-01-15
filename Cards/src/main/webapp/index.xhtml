@@ -8,34 +8,19 @@
 	
 	<h:head><title>JSF</title></h:head>
 	<h:body>
-		<style type="text/css">
-		    .ui-panel, div.ui-state-hover {
-		        margin: 10px;
-		    }
-		
-		    .ui-dashboard-column {
-		        width: 220px;
-		    }
-		</style>
-	
 		<h:form>
 			<p:lifecycle />
 			
 			<p:separator />
 		
 			<p:panelGrid 
-				columns="2" 
+				columns="1" 
 				layout="grid" 
-				styleClass="ui-panelgrid-blank" 
-				columnClasses="ui-grid-col-8,ui-grid-col-4">
+				styleClass="ui-panelgrid-blank">
 				
 				<h:panelGroup id="content">
 					<ui:include src="conteudo/content.xhtml" />
 				</h:panelGroup>
-				
-				<h:panelGrid id="config">
-					<ui:include src="config/pesquisar.xhtml" />
-				</h:panelGrid>
 				
 			</p:panelGrid>
 			

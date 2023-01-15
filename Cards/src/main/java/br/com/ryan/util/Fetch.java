@@ -4,8 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ryan.config.RealTime;
-
 public class Fetch {
 	
 	private Fetch() {
@@ -13,8 +11,6 @@ public class Fetch {
     }
 	
 	public static <E> List<E> fetchList(Class<E> clazz, int size) {
-		RealTime.inicialize("Fetch", "fetch");
-		
 		List<E> list = new ArrayList<E>();
 		
 		try {

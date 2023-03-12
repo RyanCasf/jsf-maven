@@ -11,6 +11,12 @@ public class Fetch {
     }
 	
 	public static <E> List<E> fetchList(Class<E> clazz, int size) {
+		if (clazz == null) 
+			throw new NullPointerException("Clazz is null.");
+		
+		if (size < 0)
+			throw new IllegalArgumentException("Size is less zero.");
+		
 		List<E> list = new ArrayList<E>();
 		
 		try {

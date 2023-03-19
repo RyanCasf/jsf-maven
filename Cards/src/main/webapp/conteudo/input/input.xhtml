@@ -10,22 +10,23 @@
 	<h:body>
 		<h:form>
 			<p:panelGrid 
-				columns="1"
-				layout="grid">
+				columns="3"
+				layout="grid"
+				styleClass="ui-panel-blank">
 				
 				<h:panelGroup>
-					<h5>Número:</h5>
-					<p:spinner value="#{spinnerView.number1}"/>
+					<h:outputText value="Número:" style="font-weight:bold;display:grid" />
+					<p:spinner value="#{spinnerView.number1}" style="width:100%" />
 				</h:panelGroup>
 				
 				<h:panelGroup>
-					<h5>Escrita de lista:</h5>
-		    		<p:chips />
+					<h:outputText value="Escrita de lista:" style="font-weight:bold;display:grid" />
+		    		<p:chips style="width:100%" />
 				</h:panelGroup>
 				
 				<h:panelGroup>
-					<h5>(Separação também por vírgula após o 'Enter'):</h5>
-		    		<p:chips widgetVar="wgtPaste" addOnPaste="true" separator="," />
+					<h:outputText value="(Separação também por vírgula após o 'Enter'):" style="font-weight:bold;display:grid" />
+		    		<p:chips widgetVar="wgtPaste" addOnPaste="true" separator="," style="width:100%" />
 				</h:panelGroup>
 				
 			</p:panelGrid>

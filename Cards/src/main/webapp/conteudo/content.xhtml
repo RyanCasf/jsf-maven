@@ -14,6 +14,16 @@
 			dynamic="true"
 			orientation="left">
 			
+			<p:tab title="Home">
+				<ui:include src="home/home.xhtml" />
+			</p:tab>
+			
+			<p:tab disabled="true">
+				<f:facet name="title">
+					<p:separator />
+				</f:facet>
+			</p:tab>
+			
 			<p:tab title="Card">
 				<ui:include src="card/card.xhtml" />
 			</p:tab>

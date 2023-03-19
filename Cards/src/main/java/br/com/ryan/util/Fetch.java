@@ -10,7 +10,7 @@ public class Fetch {
 		throw new IllegalStateException("Classe utilitária!");
     }
 	
-	public static <E> List<E> fetchList(Class<E> clazz, int size) {
+	public static <E> List<E> fetchList(Class<E> clazz, int size) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		if (clazz == null) 
 			throw new NullPointerException("Clazz is null.");
 		
@@ -18,13 +18,8 @@ public class Fetch {
 			throw new IllegalArgumentException("Size is less zero.");
 		
 		List<E> list = new ArrayList<E>();
-		
-		try {
-			for (int i=0; i<size; i++) {
-				list.add(clazz.getDeclaredConstructor().newInstance());
-			}
-		} catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException | RuntimeException e) {
-			e.printStackTrace();
+		for (int i=0; i<size; i++) {
+			list.add(clazz.getDeclaredConstructor().newInstance());
 		}
 		
 	    return list;

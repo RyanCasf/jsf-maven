@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Random;
 
@@ -27,15 +28,15 @@ class FetchTeste {
 	}
 	
 	@Test @DisplayName("Fetch para lista vazia.")
-	void fetchVazio() {
-		List lista = Fetch.fetchList(String.class, 0);
+	void fetchVazio() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
+		List<String> lista = Fetch.fetchList(String.class, 0);
 		assertTrue(lista.isEmpty());
 	}
 	
 	@Test @DisplayName("Fetch para lista populada.")
-	void fetchPopulado() {
+	void fetchPopulado() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
 		final int SIZE = Math.abs(new Random().nextInt(100)) + 1;
-		List lista = Fetch.fetchList(String.class, SIZE);
+		List<String> lista = Fetch.fetchList(String.class, SIZE);
 		
 		assertEquals(SIZE, lista.size());
 	}
@@ -48,35 +49,33 @@ class FetchTeste {
 	}
 	
 	@Test @DisplayName("Fetch para lista com E com construtor com parâmetro e com padrão.")
-	void fetchClasseComParametroEPadrao() {
+	void fetchClasseComParametroEPadrao() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		final int SIZE = Math.abs(new Random().nextInt(100)) + 1;
-		assertThrows(NoSuchMethodException.class, () -> Fetch.fetchList(ClasseConstrutoresPadraoEParametro.class, SIZE));
+		List<ClasseConstrutoresPadraoEParametro> lista = Fetch.fetchList(ClasseConstrutoresPadraoEParametro.class, SIZE);
+		
+		assertEquals(SIZE, lista.size());
 	}
 	
 	@Test @DisplayName("Fetch para lista com E com construtor com padrão.")
-	void fetchClasseConstrutorPadrao() {
+	void fetchClasseConstrutorPadrao() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
 		final int SIZE = Math.abs(new Random().nextInt(100)) + 1;
-		List lista = Fetch.fetchList(ClasseConstrutorPadrao.class, SIZE);
+		List<ClasseConstrutorPadrao> lista = Fetch.fetchList(ClasseConstrutorPadrao.class, SIZE);
 		
 		assertEquals(SIZE, lista.size());
 	}
 	
 	@Test @DisplayName("Fetch para lista com E na mesma classe.")
-	void fetchClassePadraoEmMesmaClasse() {
+	void fetchClassePadraoEmMesmaClasse() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
 		final int SIZE = Math.abs(new Random().nextInt(100)) + 1;
-		List lista = Fetch.fetchList(ClassePadraoMesmaClasse .class, SIZE);
-		
-		assertEquals(SIZE, lista.size());
+		assertThrows(NoSuchMethodException.class, () -> Fetch.fetchList(ClassePadraoMesmaClasse .class, SIZE));
 	}
 	
-	public class ClassePadraoMesmaClasse {
-		
-	}
+	public class ClassePadraoMesmaClasse {}
 	
 	@Test @DisplayName("Fetch para lista com E.")
-	void fetchClassePadrao() {
+	void fetchClassePadrao() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
 		final int SIZE = Math.abs(new Random().nextInt(100)) + 1;
-		List lista = Fetch.fetchList(ClassePadrao .class, SIZE);
+		List<ClassePadrao> lista = Fetch.fetchList(ClassePadrao .class, SIZE);
 		
 		assertEquals(SIZE, lista.size());
 	}

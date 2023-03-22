@@ -41,8 +41,8 @@ public class DashManager implements Serializable {
 			Panel panel = (Panel) application.createComponent(fc, "org.primefaces.component.Panel", "org.primefaces.component.PanelRenderer");
 			panel.setId("measure_" + i);
 			panel.setHeader("Dashboard Component " + i);
-			panel.setClosable(true);
-			panel.setToggleable(true);
+			panel.setClosable(false);
+			panel.setToggleable(false);
 
 			getDashboard().getChildren().add(panel);
 			DashboardColumn column = model.getColumn(i%4);

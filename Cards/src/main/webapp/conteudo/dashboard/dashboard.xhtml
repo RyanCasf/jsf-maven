@@ -8,8 +8,45 @@
 	
 	<h:head><title>JSF</title></h:head>
 	<h:body>
-		<p:dashboard id="dynamic_dashboard" binding="#{dashManager.dashboard}">
-			<p:ajax event="reorder" listener="#{dashManager.handleReorder}" />
-		</p:dashboard>
+		<style>
+			.ui-panel, div.ui-state-hover {
+		        margin: 10px;
+		    }
+		    
+		    .ui-dashboard-column {
+		        width: 300px;
+		    }
+		</style>
+		
+		<h:form id="formularioDashboard">
+			<p:panelGrid 
+				columns="2"
+				layout="grid"
+				styleClass="ui-panel-blank">
+				
+				<h:panelGroup>
+					<h:outputText value="Espaçamento (px):" style="font-weight:bold;display:grid" />
+					<span class="ui-input-icon-right">
+						<p:inputText readonly="true" value="10px" />
+						<i class="pi pi-spin pi-spinner" />
+				    </span>
+				</h:panelGroup>
+				
+				<h:panelGroup>
+					<h:outputText value="Tamanho do painel (px):" style="font-weight:bold;display:grid" />
+					<span class="ui-input-icon-right">
+						<p:inputText readonly="true" value="350px" />
+				        <i class="pi pi-spin pi-spinner" />
+				    </span>
+				</h:panelGroup>
+				
+			</p:panelGrid>
+			
+			<p:separator />
+			
+			<p:dashboard id="dynamic_dashboard" binding="#{dashManager.dashboard}">
+				<p:ajax event="reorder" listener="#{dashManager.handleReorder}" />
+			</p:dashboard>
+		</h:form>
 	</h:body>
 </html>

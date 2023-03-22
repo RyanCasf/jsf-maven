@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head><title>JSF</title></h:head>
+	<h:body>
+		<h:form enctype="multipart/form-data">
+			<p:messages id="messages" showDetail="true" closable="true" />
+				
+				<p:panelGrid 
+					columns="1"
+					layout="grid"
+					styleClass="ui-panel-blank">
+				
+					<h:outputText value="Unitário" style="font-weight:bold" />
+			        <p:fileUpload 
+			        	mode="simple" 
+			        	update="@form"
+			        	virusScan="true"
+			        	skinSimple="true" 
+			        	label="Selecione..."
+			        	value="#{fileUploadManager.file}" />
+			
+			       </p:panelGrid>
+        </h:form>
+	</h:body>
+</html>

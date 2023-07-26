@@ -56,6 +56,7 @@ public class PlanilhaManager implements Serializable {
 	}
 	
 	public String getServerTimeZone() {
+		System.out.println(serverTimeZone);
 		return serverTimeZone;
 	}
 	

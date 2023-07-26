@@ -8,17 +8,23 @@
 	
 	<h:head><title>JSF</title></h:head>
 	<h:body>
-		<h:form>
+		<h:form id="formulario">
 			<p:messages id="messages" closable="true" />
+			
 			<p:schedule 
-				id="schedule"
-				value="#{planilhaManager.eventModel}" 
-				timeZone="#{planilhaManager.serverTimeZone}" 
-				clientTimeZone="#{planilhaManager.serverTimeZone}">
+				locale="pt" 
+				axisFormat="H:mm" 
+				timeFormat="HH:mm" 
+				timeZone="America/Sao_Paulo" 
+				style="width:1000px;height:700px" 
+				clientTimeZone="America/Sao_Paulo" 
+				value="#{planilhaManager.eventModel}">
 				
-		       	<p:ajax event="dateSelect" listener="#{planilhaManager.onDateSelect}" update="messages" oncomplete="PF('dlgEvento').show();" />
-		        <p:ajax event="eventSelect" listener="#{planilhaManager.onEventSelect}" update="messages" oncomplete="PF('dlgEvento').show();" />
-		        <p:ajax event="eventMove" listener="#{planilhaManager.onEventMove}" update="messages" />
+		       	<p:ajax 
+		       		update="messages" 
+		       		event="dateSelect" 
+		       		oncomplete="PF('dlgEvento').show()" 
+		       		listener="#{planilhaManager.onDateSelect}" />
 		       </p:schedule>
         
         	<p:dialog

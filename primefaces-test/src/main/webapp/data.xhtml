@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<title>PrimeFaces Test</title>
+		<h:outputScript name="locale.js" />
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<h:outputText value="Data:" style="font-weight:bold;display:block" />
+			<p:calendar 
+				id="data" 
+				mask="true" 
+				locale="pt_BR" 
+				navigator="true" 
+				pattern="dd/MM/yyyy" 
+				value="#{dataBean.data}" />
+				
+			<h:outputText id="dataTexto" value="#{dataBean.data}" style="font-weight:bold">
+				<f:convertDateTime locale="pt_BR" pattern="dd/MM/yyyy" />
+			</h:outputText>
+			
+			<p:commandButton 
+				process="data" 
+				value="Imprimir" 
+				update="dataTexto" 
+				style="display:block" />
+		</h:form>
+	</h:body>
+</html>

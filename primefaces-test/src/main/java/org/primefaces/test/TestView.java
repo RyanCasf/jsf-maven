@@ -19,15 +19,11 @@ import lombok.Data;
 @Data @Named @ViewScoped
 public class TestView implements Serializable {
 	
-	private String string;
-	
 	private TimelineModel timeline;
 	private Date start = CalendarioUtil.dataOntem();
 	private Date end = CalendarioUtil.dataAmanha();
 	
 	public TestView() {
-		string = "Welcome to PrimeFaces!!!";
-		
 		String[] names = new String[] { "User 1", "User 2", "User 3", "User 4", "User 5", "User 6" };
 		timeline = new TimelineModel();
 		

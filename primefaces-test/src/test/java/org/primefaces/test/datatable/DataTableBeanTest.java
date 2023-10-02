@@ -1,0 +1,66 @@
+package org.primefaces.test.datatable;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+
+@TestInstance(Lifecycle.PER_CLASS)
+class DataTableBeanTest {
+	
+	private DataTableBean bean;
+	private DataTableTestRegistros registros;
+	
+	@BeforeAll
+	void setUpAll() {
+		registros = new DataTableTestRegistros();
+	}
+	
+	@BeforeEach
+	void setUp() {
+		bean = new DataTableBean();
+	}
+	
+	@Test
+	void adicionarContatoUnico() {
+		bean.setContato(registros.getContato1());
+		
+		bean.adicionarContato();
+		
+		assertEquals(1, bean.getContatos().size());
+		assertEquals(registros.getContato1().getNome(), bean.getContatos().get(0).getNome());
+		assertEquals(registros.getContato1().getCidade(), bean.getContatos().get(0).getCidade());
+		assertNull(bean.getContato().getNome());
+		assertNull(bean.getContato().getCidade());
+	}
+	
+	@Test
+	void adicionarContatoMultiplo() {
+		bean.setContato(registros.getContato1());
+		bean.adicionarContato();
+		assertNull(bean.getContato().getNome());
+		assertNull(bean.getContato().getCidade());
+		
+		bean.setContato(registros.getContato2());
+		bean.adicionarContato();
+		assertNull(bean.getContato().getNome());
+		assertNull(bean.getContato().getCidade());
+		
+		bean.setContato(registros.getContato3());
+		bean.adicionarContato();
+		assertNull(bean.getContato().getNome());
+		assertNull(bean.getContato().getCidade());
+		
+		assertEquals(3, bean.getContatos().size());
+		assertEquals(registros.getContato1().getNome(), bean.getContatos().get(0).getNome());
+		assertEquals(registros.getContato1().getCidade(), bean.getContatos().get(0).getCidade());
+		assertEquals(registros.getContato2().getNome(), bean.getContatos().get(1).getNome());
+		assertEquals(registros.getContato2().getCidade(), bean.getContatos().get(1).getCidade());
+		assertEquals(registros.getContato3().getNome(), bean.getContatos().get(2).getNome());
+		assertEquals(registros.getContato3().getCidade(), bean.getContatos().get(2).getCidade());
+	}
+}

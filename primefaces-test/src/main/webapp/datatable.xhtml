@@ -14,6 +14,8 @@
 			<p:growl id="informacao" showDetail="true" />
 			
 			<p:panel header="Dados" id="dadosPainel">
+				<p:messages severity="fatal,error" closable="true" />
+				
 				<p:panelGrid 
 					columns="2" 
 					layout="grid" 
@@ -22,12 +24,26 @@
 					
 					<h:panelGroup>
 						<h:outputText value="Nome:" style="font-weight:bold;display:block" />
-						<p:inputText value="#{dataTableBean.contato.nome}" style="width:100%" />
+						<p:inputText 
+							id="nome" 
+							required="true" 
+							style="width:100%" 
+							value="#{dataTableBean.contato.nome}" 
+							requiredMessage="O campo 'Nome' está inválido!" />
+							
+						<p:message for="nome" />
 					</h:panelGroup>
 					
 					<h:panelGroup>
 						<h:outputText value="Cidade:" style="font-weight:bold;display:block" />
-						<p:inputText value="#{dataTableBean.contato.cidade}" style="width:100%" />
+						<p:inputText 
+							id="cidade" 
+							required="true" 
+							style="width:100%" 
+							value="#{dataTableBean.contato.cidade}" 
+							requiredMessage="O campo 'Cidade' está inválido!" />
+							
+						<p:message for="cidade" />
 					</h:panelGroup>
 					
 				</p:panelGrid>

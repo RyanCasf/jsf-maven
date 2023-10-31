@@ -5,12 +5,14 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 @TestInstance(Lifecycle.PER_CLASS)
-class DataTableBeanTest {
+@DisplayName("Data Table Bean")
+class DataTableBeanTeste {
 	
 	private DataTableBean bean;
 	private DataTableTestRegistros registros;
@@ -25,7 +27,7 @@ class DataTableBeanTest {
 		bean = new DataTableBean();
 	}
 	
-	@Test
+	@Test @DisplayName("Adicionar contato único.")
 	void adicionarContatoUnico() {
 		bean.setContato(registros.getContato1());
 		
@@ -38,7 +40,7 @@ class DataTableBeanTest {
 		assertNull(bean.getContato().getCidade());
 	}
 	
-	@Test
+	@Test @DisplayName("Adicionar contato múltiplo.")
 	void adicionarContatoMultiplo() {
 		bean.setContato(registros.getContato1());
 		bean.adicionarContato();

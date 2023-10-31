@@ -1,19 +1,25 @@
 package org.primefaces.util;
 
-import java.util.Calendar;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class CalendarioUtil {
 	
+	private static Clock clock = Clock.systemDefaultZone();
+	
+	private CalendarioUtil() {
+		throw new IllegalStateException("Classe utilitária");
+	}
+	
 	public static Date dataOntem() {
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, -1);
-		return calendar.getTime();
+		LocalDate ontem = LocalDate.now(clock).minusDays(1);
+		return Date.from(ontem.atStartOfDay(ZoneId.systemDefault()).toInstant());
 	}
 	
 	public static Date dataAmanha() {
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, 1);
-		return calendar.getTime();
+		LocalDate ontem = LocalDate.now(clock).plusDays(1);
+		return Date.from(ontem.atStartOfDay(ZoneId.systemDefault()).toInstant());
 	}
 }

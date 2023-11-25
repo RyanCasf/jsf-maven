@@ -35,7 +35,7 @@ public class TestView implements Serializable {
 				endDate = startDate.plusHours(4 + Math.round(Math.random() * 5));
 
 				long r = Math.round(Math.random() * 2);
-				String availability = (r == 0 ? "Unavailable" : (r == 1 ? "Available" : "Maybe"));
+				String availability = disponibilidade(r);
 
 				TimelineEvent event = new TimelineEvent();
 				event.setData(availability);
@@ -49,24 +49,32 @@ public class TestView implements Serializable {
 			}
 		}
 	}
+
+	private String disponibilidade(long r) {
+		if (r == 0) {
+			return "Unavailable";
+		}
+		
+		return r == 1 ? "Available" : "Maybe";
+	}
 	
 	public void onAdd(TimelineAddEvent timelineAddEvent) {
-		System.out.println("Add");
+		System.out.println("Add: " + timelineAddEvent);
 	}
 	
 	public void onChange(TimelineModificationEvent timelineModificationEvent) {
-		System.out.println("Change");
+		System.out.println("Change: " + timelineModificationEvent);
     }
 
     public void onChanged(TimelineModificationEvent timelineModificationEvent) {
-    	System.out.println("Changed");
+    	System.out.println("Changed: " + timelineModificationEvent);
     }
 	
 	public void onEdit(TimelineModificationEvent timelineModificationEvent) {
-		System.out.println("Edit");
+		System.out.println("Edit: " + timelineModificationEvent);
 	}
 	
 	public void onDelete(TimelineModificationEvent timelineModificationEvent) {
-		System.out.println("Delete");
+		System.out.println("Delete: " + timelineModificationEvent);
 	}
 }

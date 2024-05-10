@@ -11,4 +11,5 @@ public class Contato implements Serializable {
 	private Long chave;
 	private String nome;
 	private String cidade;
+	private UnidadeFederativa unidadeFederativa;
 }

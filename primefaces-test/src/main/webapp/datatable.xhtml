@@ -23,10 +23,9 @@
 				<p:messages severity="fatal,error" closable="true" />
 				
 				<p:panelGrid 
-					columns="2" 
+					columns="3" 
 					layout="grid" 
-					styleClass="ui-panelgrid-blank" 
-					columnClasses="ui-grid-col-6,ui-grid-col-6">
+					styleClass="ui-panelgrid-blank">
 					
 					<h:panelGroup>
 						<h:outputText value="Nome:" style="font-weight:bold;display:block" />
@@ -38,6 +37,17 @@
 							requiredMessage="O campo 'Nome' está inválido!" />
 							
 						<p:message for="nome" />
+					</h:panelGroup>
+					
+					<h:panelGroup>
+						<h:outputText value="UF:" style="font-weight:bold;display:block" />
+						<p:autoComplete 
+							dropdown="true" 
+							scrollHeight="250" 
+							placeholder="Selecione..." 
+							emptyMessage="Nenhuma UF encontrada!" 
+							value="#{dataTableBean.contato.unidadeFederativa}" 
+                            completeMethod="#{dataTableBean.unidadesFederativas}" />
 					</h:panelGroup>
 					
 					<h:panelGroup>

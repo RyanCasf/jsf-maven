@@ -2,7 +2,9 @@ package org.primefaces.test.datatable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -35,5 +37,13 @@ public class DataTableBean implements Serializable {
 		
 		contatos.add(contato);
 		contato = new Contato();
+	}
+	
+	public List<UnidadeFederativa> unidadesFederativas(String entrada) {
+		System.out.println("getUnidadesFederativas");
+		return Arrays.asList(UnidadeFederativa.values()).stream()
+				.filter(uf -> entrada != null)
+				.filter(uf -> uf.name().contains(entrada))
+				.collect(Collectors.toList());
 	}
 }

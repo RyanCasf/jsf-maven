@@ -10,6 +10,16 @@
 	</h:head>
 	
 	<h:body>
+		<style>
+			 button#formularioDataTable\:botaoAdicionar {
+			 	border-radius: 50px;
+			 }
+			 
+			 #formularioDataTable .ui-tooltip-arrow {
+			 	background: none !important;
+			 }
+		</style>
+		
 		<h:form id="formularioDataTable">
 			<p:growl id="informacao" showDetail="true" />
 			
@@ -68,11 +78,14 @@
 				
 				<h:panelGroup style="display:block;text-align:center">
 					<p:commandButton 
+						id="botaoAdicionar"
 						value="Adicionar" 
 						style="width:120px" 
 						update=":formularioDataTable" 
 						process=":formularioDataTable:dadosPainel" 
 						actionListener="#{dataTableBean.adicionarContato}" />
+						
+					<p:tooltip for="botaoAdicionar" value="Adicionar" position="bottom" />
 				</h:panelGroup>
 				
 			</p:panel>

@@ -15,8 +15,8 @@
 			 	border-radius: 50px;
 			 }
 			 
-			 #formularioDataTable .ui-tooltip-arrow {
-			 	background: none !important;
+			 .ui-tooltip-arrow {
+			 	display: none !important;
 			 }
 		</style>
 		
@@ -54,6 +54,7 @@
 						<p:autoComplete 
 							dropdown="true" 
 							scrollHeight="250" 
+							style="display:grid" 
 							placeholder="Selecione..." 
 							emptyMessage="Nenhuma UF encontrada!" 
 							value="#{dataTableBean.contato.unidadeFederativa}" 

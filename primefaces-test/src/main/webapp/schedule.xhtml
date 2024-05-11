@@ -14,6 +14,13 @@
 			    justify-content: space-between;
 			}
 			
+			#formularioSchedule .ui-tooltip.ui-widget.ui-widget-content.ui-shadow.ui-corner-all {
+				padding: 3px 10px;
+			    background-color: #4c4c4c;
+			    color: #fff;
+			    border: none;
+			}
+			
 			.custom-panel-item {
 			    width: 48%;
 			}
@@ -38,7 +45,10 @@
 		<h:form id="formularioSchedule">
 			<div class="custom-panel">
 			    <div class="custom-panel-item">
-			        <p:schedule id="schedule" value="#{scheduleBean.schedule}" />
+			        <p:schedule 
+			        	id="schedule" 
+			        	tooltip="true" 
+			        	value="#{scheduleBean.schedule}" />
 			    </div>
 			    
 			    <div class="custom-panel-item">

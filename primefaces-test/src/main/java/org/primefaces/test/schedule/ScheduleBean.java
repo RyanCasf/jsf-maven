@@ -9,7 +9,6 @@ import javax.inject.Named;
 
 import org.primefaces.model.DefaultScheduleEvent;
 import org.primefaces.model.LazyScheduleModel;
-import org.primefaces.model.ScheduleEvent;
 import org.primefaces.model.ScheduleModel;
 import org.primefaces.model.timeline.TimelineModel;
 import org.primefaces.util.CalendarioUtil;
@@ -33,10 +32,12 @@ public class ScheduleBean implements Serializable {
 				System.out.println("Início: " + sdf.format(inicio));
 				System.out.println("Fim: " + sdf.format(fim));
 				
-				ScheduleEvent item0 = new DefaultScheduleEvent("0", new Date(), CalendarioUtil.dataAmanha());
+				DefaultScheduleEvent item0 = new DefaultScheduleEvent("0", new Date(), CalendarioUtil.dataAmanha());
+				item0.setDescription("Item 0");
 				addEvent(item0);
 				
-				ScheduleEvent item1 = new DefaultScheduleEvent("1", CalendarioUtil.dataOntem(), CalendarioUtil.dataAmanha());
+				DefaultScheduleEvent item1 = new DefaultScheduleEvent("1", CalendarioUtil.dataOntem(), CalendarioUtil.dataAmanha());
+				item1.setDescription("Item 1");
 				addEvent(item1);
 			}
 		};

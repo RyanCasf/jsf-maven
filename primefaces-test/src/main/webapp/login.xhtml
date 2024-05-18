@@ -13,8 +13,8 @@
 	</h:head>
 	
 	<h:body>
-		<div class="grupo_completo">
-	        <main class="grupo_formulario">
+		<h:panelGroup styleClass="grupo_completo">
+	        <h:panelGroup styleClass="grupo_formulario">
 	            <a href="#" title="Logo">
 	            	<h:graphicImage 
 	            		alt="Logo" 
@@ -22,40 +22,35 @@
 	            		value="https://kronosys.com.br/global/wp-content/uploads/2021/12/horizontal_fundobranco@9x.png" />
 	            </a>
 	            
-	            <form class="formulario_login">
-	                <div class="grupo_introducao">
+	            <h:form styleClass="formulario_login">
+	                <h:panelGroup styleClass="grupo_introducao">
 	                    <h1>KronoSys! &#128079;</h1>
 	                    <h2>Entre com sua conta!</h2>
-	                </div>
+	                </h:panelGroup>
 	                
-                    <div class="separator"></div>
+                    <p:separator styleClass="separator_opaco" />
                     
-	                <div class="campo_texto">
+	                <h:panelGroup styleClass="campo_texto">
 	                    <label for="email">E-mail</label>
 	                    <input type="email" autocomplete="off" placeholder="seu@email.com" />
-	                </div>
+	                </h:panelGroup>
 	                
-	                <div class="campo_texto">
+	                <h:panelGroup styleClass="campo_texto">
 	                    <label for="password">Senha</label>
 	                    <input type="password" placeholder="Sua senha" />
-	                </div>
+	                </h:panelGroup>
 	                
 	                <button class="botao_entrar" type="submit">Entrar</button>
-	            </form>
-	        </main>
+	            </h:form>
+	        </h:panelGroup>
 	        
-	        <aside class="lado_informacao">
-	            <div class="grupo_informacao">
-	                <img 
-	                	src="assets/returns.png" 
-	                	alt="Returns" 
-	                	class="returns" />
-	                
-	                <blockquote>
-	                    With Laplace, I have significantly outperformed --- 500 in the last three years.
-	                </blockquote>
-	            </div>
-	        </aside>
-	    </div>
+	        <h:panelGroup styleClass="lado_informacao">
+	            <h:panelGroup styleClass="grupo_informacao">
+	            	<h:graphicImage 
+	            		alt="Capa" 
+	            		value="https://arquivo.devmedia.com.br/artigos/Eduardo_Zambom/graficos_JSF/image003.jpg" />
+	            </h:panelGroup>
+	        </h:panelGroup>
+	    </h:panelGroup>
 	</h:body>
 </html>

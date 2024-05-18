@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
@@ -67,8 +71,7 @@ body {
     font-weight: normal;
 }
 
-.separator {
-    width: 100%;
+.separator_opaco {
     height: 1px;
     background: #1D1D1D;
     opacity: .2;
@@ -122,14 +125,19 @@ body {
     transition: all .3s ease;
 }
 
+.botao_entrar:hover {
+	background: #333232;
+	border: 1px solid #000;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 4px 0px;
+}
+
 .lado_informacao {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
     border-radius: 2rem;
-    background: url('assets/background.jpg') repeat center center;
-    background-position: cover;
+    background: url('https://img.freepik.com/vetores-gratis/fundo-realista-de-luzes-de-neon_23-2148907367.jpg') repeat center center;
     max-height: 90rem;
 }
 
@@ -144,21 +152,14 @@ body {
 
 .lado_informacao .grupo_informacao img {
     width: 100%;
-    max-width: 100%;
     border-radius: 1rem;
 }
 
-.lado_informacao .grupo_informacao blockquote {
-    margin-bottom: 1rem;
-    width: 100%;
-    font-size: 1rem;
-}
-
-@media (max-width: 640px) {
+@media (max-width: 800px) {
     .grupo_completo {
         grid-template-columns: 1fr;
     }
-
+	
     .lado_informacao {
         display: none;
     }

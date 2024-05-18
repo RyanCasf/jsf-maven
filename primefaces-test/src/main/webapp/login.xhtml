@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<title>Login</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<h:outputStylesheet name="login.css" />
+	</h:head>
+	
+	<h:body>
+		<div class="grupo_completo">
+	        <main class="grupo_formulario">
+	            <a href="#" title="Logo">
+	            	<h:graphicImage 
+	            		alt="Logo" 
+	            		styleClass="logo" 
+	            		value="https://kronosys.com.br/global/wp-content/uploads/2021/12/horizontal_fundobranco@9x.png" />
+	            </a>
+	            
+	            <form class="formulario_login">
+	                <div class="grupo_introducao">
+	                    <h1>KronoSys! &#128079;</h1>
+	                    <h2>Entre com sua conta!</h2>
+	                </div>
+	                
+                    <div class="separator"></div>
+                    
+	                <div class="campo_texto">
+	                    <label for="email">E-mail</label>
+	                    <input type="email" autocomplete="off" placeholder="seu@email.com" />
+	                </div>
+	                
+	                <div class="campo_texto">
+	                    <label for="password">Senha</label>
+	                    <input type="password" placeholder="Sua senha" />
+	                </div>
+	                
+	                <button class="botao_entrar" type="submit">Entrar</button>
+	            </form>
+	        </main>
+	        
+	        <aside class="lado_informacao">
+	            <div class="grupo_informacao">
+	                <img 
+	                	src="assets/returns.png" 
+	                	alt="Returns" 
+	                	class="returns" />
+	                
+	                <blockquote>
+	                    With Laplace, I have significantly outperformed --- 500 in the last three years.
+	                </blockquote>
+	            </div>
+	        </aside>
+	    </div>
+	</h:body>
+</html>

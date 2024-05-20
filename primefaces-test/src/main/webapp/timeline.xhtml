@@ -6,9 +6,9 @@
 	xmlns:jsf="http://xmlns.jcp.org/jsf"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-
+	
     <h:head>
-        <title>PrimeFaces Test</title>
+        <title>Timeline</title>
         <h:outputScript name="test.js" />
         <h:outputStylesheet name="test.css" />
     </h:head>
@@ -81,9 +81,9 @@
 	            eventMargin="10" 
         		stackEvents="false" 
 	            eventMarginAxis="0" 
-        		value="#{testView.timeline}" 	
+	            end="#{testView.end}" 
 	            start="#{testView.start}" 
-	            end="#{testView.end}">
+	            value="#{testView.timeline}" >
 	            
 	            <p:ajax 
 	            	event="add" 

@@ -13,8 +13,13 @@
 		<h:form>
 			<p:commandButton 
 				process="@this" 
-				value="Abrir dialog" 
-				onstart="PF('dlgDialog').show()" />
+				value="Abrir dialog (Foco)" 
+				onclick="PF('dlgDialog').show()" />
+				
+			<p:commandButton 
+				process="@this" 
+				value="Abrir dialog (Campo vazio)" 
+				onclick="PF('dlgDialogCampoVazio').show()" />
 		</h:form>
 		
 		<p:dialog 
@@ -34,6 +39,36 @@
 					<h:panelGroup>
 						<h:outputText value="Data:" style="display:block" />
 						<p:calendar  id="calendario" />
+					</h:panelGroup>
+					
+					<h:panelGroup>
+						<h:outputText value="Texto:" style="display:block" />
+						<p:inputText id="texto" />
+					</h:panelGroup>
+					
+				</p:panelGrid>
+				
+			</h:form>
+			
+		</p:dialog>
+		
+		<p:dialog 
+			modal="true" 
+			position="top"
+			dynamic="true" 
+			header="Dialog" 
+			widgetVar="dlgDialogCampoVazio">
+			
+			<h:form id="formularioDialogCampoVazio">
+				<p:panelGrid 
+					columns="2" 
+					layout="grid" 
+					styleClass="ui-panelgrid-blank">
+					
+					<h:panelGroup>
+						<h:outputText value="Data:" />
+						<p:inputText style="width:0;height:0;opacity:0" />
+						<p:calendar  id="calendario" style="display:block" />
 					</h:panelGroup>
 					
 					<h:panelGroup>

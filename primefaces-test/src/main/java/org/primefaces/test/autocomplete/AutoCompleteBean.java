@@ -1,4 +1,4 @@
-package org.primefaces.test;
+package org.primefaces.test.autocomplete;
 
 import java.io.Serializable;
 import java.util.ArrayList;

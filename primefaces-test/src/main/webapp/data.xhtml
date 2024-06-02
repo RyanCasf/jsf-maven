@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui">
 	
 	<h:head>
-		<title>PrimeFaces Test</title>
+		<title>Data</title>
 		<h:outputScript name="locale.js" />
 	</h:head>
 	
@@ -14,7 +14,7 @@
 		<h:form id="formularioData">
 			<p:growl id="informacao" showDetail="true" />
 			
-			<h:outputText value="Data:" style="font-weight:bold;display:block" />
+			<h:outputText value="Data:" style="font-weight:bold;display:block" id="texto_data" />
 			<p:calendar 
 				id="data" 
 				mask="true" 
@@ -34,6 +34,7 @@
 			</h:outputText>
 			
 			<p:commandButton 
+				id="imprimir"
 				process="data" 
 				value="Imprimir" 
 				update="dataTexto" 

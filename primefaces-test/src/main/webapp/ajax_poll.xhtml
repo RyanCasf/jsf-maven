@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui">
 	
 	<h:head>
-		<title>PrimeFaces Test</title>
+		<title>Ajax Poll</title>
 	</h:head>
 	
 	<h:body>
@@ -18,7 +18,7 @@
 				update="txtCount" 
 				listener="#{ajaxPollBean.incrementar}" />
 			
-			<h:outputText value="Contador: " style="font-weight:bold" />
+			<h:outputText value="Contador:" style="font-weight:bold" id="label_contador" />
 			<h:outputText value="#{ajaxPollBean.count}" id="txtCount" />
 		</h:form>
 	</h:body>

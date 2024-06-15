@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<title>Fonte</title>
+		
+		<style>
+			body {
+				background-color: rgb(24, 24, 27);
+			}
+			
+			.ui-widget-content {
+				color: rgb(250, 250, 250);
+				font-family: cursive;
+			}
+			
+			#formulario\:output {
+				display: block;
+				margin-bottom: 0.3rem;
+			}
+			
+			#formulario\:slider {
+				border: none;
+				box-shadow: none;
+				background-color: rgb(63,63,70);
+			}
+			
+			span.ui-slider-handle.ui-state-default.ui-corner-all {
+				box-shadow: none;
+				text-decoration: none;
+				border: 2px solid #90caf9;
+				background: rgb(63,63,70);
+			}
+		</style>
+	</h:head>
+	
+	<h:body>
+		<h:form id="formulario">
+			<p:panelGrid 
+				columns="2" 
+				layout="grid" 
+				styleClass="ui-panelgrid-blank">
+				
+				<h:panelGroup>
+					<h2 class="titulo">Fonte:</h2>
+					<h:outputText id="output" value="Tamanho da fonte: #{fonteBean.escalaFonte}" />
+					<h:inputHidden id="escalaFonte" value="#{fonteBean.escalaFonte}" />
+					
+		            <p:slider 
+		            	id="slider" 
+		            	display="output" 
+		            	for="escalaFonte" 
+		            	displayTemplate="Tamanho da fonte: {value}" />
+				</h:panelGroup>
+				
+			</p:panelGrid>
+            
+		</h:form>
+	</h:body>
+</html>

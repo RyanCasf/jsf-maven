@@ -31,7 +31,8 @@ class CalendarioUtilTeste {
 		when(clock.instant()).thenReturn(NOW.toInstant());
 	}
 	
-	@Test @DisplayName("Data de ontem.")
+	@Test
+	@DisplayName("Data de ontem.")
 	void dataOntem() {
 		try (MockedStatic<Clock> CLOCK_STATIC = mockStatic(Clock.class)) {
 			CLOCK_STATIC.when(() -> Clock.systemDefaultZone()).thenReturn(clock);
@@ -45,7 +46,8 @@ class CalendarioUtilTeste {
 		}
 	}
 	
-	@Test @DisplayName("Data de amanhã.")
+	@Test
+	@DisplayName("Data de amanhã.")
 	void dataAmanha() {
 		try (MockedStatic<Clock> CLOCK_STATIC = mockStatic(Clock.class)) {
 			CLOCK_STATIC.when(() -> Clock.systemDefaultZone()).thenReturn(clock);

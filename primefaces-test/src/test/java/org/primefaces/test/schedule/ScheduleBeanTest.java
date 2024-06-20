@@ -19,7 +19,8 @@ class ScheduleBeanTest {
 		bean = new ScheduleBean();
 	}
 	
-	@Test @DisplayName("Construtor.")
+	@Test
+	@DisplayName("Construtor.")
 	void construtor() {
 		assertNotNull(bean.getSchedule());
 		assertNotNull(bean.getTimeline());

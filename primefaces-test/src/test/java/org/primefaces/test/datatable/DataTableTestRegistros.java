@@ -1,25 +1,27 @@
 package org.primefaces.test.datatable;
 
-import lombok.Data;
+import java.util.stream.Stream;
 
-@Data
-public class DataTableTestRegistros {
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
+
+public class DataTableTestRegistros implements ArgumentsProvider {
 	
-	private Contato contato1;
-	private Contato contato2;
-	private Contato contato3;
-	
-	public DataTableTestRegistros() {
-		contato1 = new Contato();
+	@Override
+	public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
+		Contato contato1 = new Contato();
 		contato1.setNome("Nome teste:1");
 		contato1.setCidade("Cidade teste:1");
 		
-		contato2 = new Contato();
+		Contato contato2 = new Contato();
 		contato2.setNome("Nome teste:2");
 		contato2.setCidade("Cidade teste:2");
 		
-		contato3 = new Contato();
+		Contato contato3 = new Contato();
 		contato3.setNome("Nome teste:3");
 		contato3.setCidade("Cidade teste:3");
+		
+		return Stream.of(contato1, contato2, contato3).map(Arguments::of);
 	}
 }

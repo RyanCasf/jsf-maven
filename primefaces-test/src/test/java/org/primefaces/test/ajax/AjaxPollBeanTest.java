@@ -7,6 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @TestInstance(Lifecycle.PER_CLASS)
 @DisplayName("Ajax Poll Bean")
@@ -20,13 +22,16 @@ class AjaxPollBeanTest {
 		assertEquals(0, bean.getCount());
 	}
 	
-	@Test @DisplayName("Incrementar.")
-	void incrementar() {
+	@ParameterizedTest(name = "Valor: ''{0}''.")
+	@ValueSource(ints = { 1 })
+	@DisplayName("Incrementar.")
+	void incrementar(int valor) {
 		bean.incrementar();
-		assertEquals(1, bean.getCount());
+		assertEquals(valor, bean.getCount());
 	}
 	
-	@Test @DisplayName("Incrementar aleatório.")
+	@Test
+	@DisplayName("Incrementar aleatório.")
 	void incrementarAleatorio() {
 		long numero = (long) Math.abs(Math.random()) + 1;
 		

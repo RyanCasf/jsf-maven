@@ -20,7 +20,7 @@ class DataTableBeanTeste {
 	@InjectMocks
 	private DataTableBean bean;
 	
-	@ParameterizedTest(name = "Valor.")
+	@ParameterizedTest(name = "Valor: ''{0}''.")
 	@ArgumentsSource(DataTableTestRegistros.class)
 	@DisplayName("Adicionar contato único.")
 	void adicionarContatoUnico(Contato contato) {

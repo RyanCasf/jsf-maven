@@ -20,7 +20,7 @@ class AutoCompleteBeanTeste {
 	@InjectMocks
 	private AutoCompleteBean bean;
 	
-	@ParameterizedTest
+	@ParameterizedTest(name = "Valor: ''{0}''.")
 	@NullAndEmptySource
 	@ValueSource(strings = { " ", "   ", "\t", "\n" })
 	@DisplayName("Complete vazio.")
@@ -28,7 +28,7 @@ class AutoCompleteBeanTeste {
 		assertTrue(bean.complete(value).isEmpty());
 	}
 	
-	@ParameterizedTest
+	@ParameterizedTest(name = "Valor: ''{0}''.")
 	@ValueSource(strings = {"String"})
 	@DisplayName("Complete.")
 	void complete(String value) {

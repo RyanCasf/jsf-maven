@@ -7,10 +7,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.primefaces.test.util.ParameterizedNameDefaultTest;
 
 @ExtendWith(MockitoExtension.class)
 @TestInstance(Lifecycle.PER_METHOD)
@@ -20,7 +20,7 @@ class DataTableBeanTeste {
 	@InjectMocks
 	private DataTableBean bean;
 	
-	@ParameterizedTest(name = "Valor: ''{0}''.")
+	@ParameterizedNameDefaultTest
 	@ArgumentsSource(DataTableTestRegistros.class)
 	@DisplayName("Adicionar contato único.")
 	void adicionarContatoUnico(Contato contato) {

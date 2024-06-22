@@ -7,8 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.primefaces.test.util.ParameterizedNameDefaultTest;
 
 @TestInstance(Lifecycle.PER_CLASS)
 @DisplayName("Ajax Poll Bean")
@@ -22,7 +22,7 @@ class AjaxPollBeanTest {
 		assertEquals(0, bean.getCount());
 	}
 	
-	@ParameterizedTest(name = "Valor: ''{0}''.")
+	@ParameterizedNameDefaultTest
 	@ValueSource(ints = { 1 })
 	@DisplayName("Incrementar.")
 	void incrementar(int valor) {

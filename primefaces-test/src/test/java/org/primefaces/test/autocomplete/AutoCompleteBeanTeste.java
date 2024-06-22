@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.primefaces.test.util.ParameterizedNameDefaultTest;
 
 @DisplayName("AutoComplete Bean")
 @ExtendWith(MockitoExtension.class)
@@ -20,7 +20,7 @@ class AutoCompleteBeanTeste {
 	@InjectMocks
 	private AutoCompleteBean bean;
 	
-	@ParameterizedTest(name = "Valor: ''{0}''.")
+	@ParameterizedNameDefaultTest
 	@NullAndEmptySource
 	@ValueSource(strings = { " ", "   ", "\t", "\n" })
 	@DisplayName("Complete vazio.")
@@ -28,7 +28,7 @@ class AutoCompleteBeanTeste {
 		assertTrue(bean.complete(value).isEmpty());
 	}
 	
-	@ParameterizedTest(name = "Valor: ''{0}''.")
+	@ParameterizedNameDefaultTest
 	@ValueSource(strings = {"String"})
 	@DisplayName("Complete.")
 	void complete(String value) {

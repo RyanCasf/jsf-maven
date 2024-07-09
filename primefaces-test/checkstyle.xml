@@ -6,5 +6,12 @@
 <module name="Checker">
 	<module name="TreeWalker">
 		<module name="EmptyBlock" />
+		<module name="MissingOverride" />
+		<module name="EqualsHashCode" />
+		
+		<module name="IllegalInstantiation">
+            <property name="classes" value="java.math.BigDecimal" />
+        </module>
+        
 	</module>
 </module>

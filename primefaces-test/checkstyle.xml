@@ -8,6 +8,7 @@
 		<module name="EmptyBlock" />
 		<module name="MissingOverride" />
 		<module name="EqualsHashCode" />
+		<module name="UnusedImports" />
 		
 		<module name="IllegalInstantiation">
             <property name="classes" value="java.math.BigDecimal" />

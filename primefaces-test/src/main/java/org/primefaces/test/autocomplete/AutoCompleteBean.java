@@ -10,7 +10,6 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import org.primefaces.event.SelectEvent;
-import org.primefaces.event.UnselectEvent;
 
 import lombok.Data;
 
@@ -30,9 +29,5 @@ public class AutoCompleteBean implements Serializable {
 	
 	public void itemSelect(SelectEvent	evento) {
 		System.out.println("itemSelect: " + evento.getObject());
-	}
-	
-	public void itemUnselect(UnselectEvent evento) {
-		System.out.println("itemUnselect");
 	}
 }

@@ -13,15 +13,19 @@
 		<h:form id="form">
 		
 			<h:panelGroup>
-				<h:outputText value="Opção:" id="campo" />
+				<h:outputText value="Opção:" id="campo" style="display:block" />
 				<p:autoComplete 
+					minQueryLength="0" 
 					id="textoAutoComplete" 
 					value="#{autoCompleteBean.texto}" 
 					completeMethod="#{autoCompleteBean.complete}">
 					
-					<p:ajax event="itemSelect" listener="#{autoCompleteBean.itemSelect}" />
+					<p:ajax event="itemSelect" listener="#{autoCompleteBean.itemSelect}" process="@this" update="@form" />
+					<p:ajax process="@this" update="@form" />
 				</p:autoComplete>
 			</h:panelGroup>
+			
+			<h:outputText value="#{autoCompleteBean.texto}" />
 				
 		</h:form>
 	</h:body>

@@ -19,15 +19,21 @@ public class AutoCompleteBean implements Serializable {
 	private String texto;
 	
 	public List<String> complete(String in) {
+		System.out.println("Complete: " + in);
+		
 		if (in == null || in.trim().isEmpty()) {
+			texto = null;
 			return Collections.emptyList();
 		}
 		
-		System.out.println(in);
 		return new ArrayList<>(Arrays.asList("0", "1", "2", in));
 	}
 	
 	public void itemSelect(SelectEvent	evento) {
+		if (evento == null) {
+			return;
+		}
+		
 		System.out.println("itemSelect: " + evento.getObject());
 	}
 }

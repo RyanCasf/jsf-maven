@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Erro</title>
+		
+		<style>
+			body {
+			    margin: 0;
+			    padding: 0;
+			    font-family: Verdana, sans-serif;
+			    background-color: #F8F8F8;
+			    color: #333;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    height: 100vh;
+			}
+			
+			.conteudo {
+			    width: 80%;
+			}
+			
+			.erro-titulo {
+			    font-size: 72px;
+			    color: #303963;
+			}
+			
+			.erro-sub {
+			    font-size: 36px;
+			    margin: 10px 0 20px 0;
+			}
+			
+			.grupo-mais-informacao {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			    font-size: 16px;
+			    background-color: #FFF;
+			    padding: 20px;
+			    border-radius: 5px;
+			    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			    column-gap: 1em;
+			    line-height: 1.5em;
+			}
+			
+			.rodape {
+			    margin-top: 40px;
+			    font-size: 14px;
+			    color: #999;
+			    text-align: center;
+			}
+			
+			.negrito {
+				font-weight: bold;
+				font-size: 20px;
+				color: #5268C1;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="conteudo">
+			<div class="erro-titulo">Algo deu errado</div>
+			<div class="erro-sub">Ocorreu algo inesperado durante o processo</div>
+			
+			<div class="grupo-mais-informacao">
+				<div class="ocorrido">
+					<p class="negrito">O que aconteceu?</p>
+					<p>Durante o processo de busca da página algo ocorreu que impossibilitou sua apresentação.</p>
+				</div>
+				
+				<div class="solucao">
+					<p class="negrito">O que posso fazer?</p>
+					<p>Tente novamente em alguns minutos.</p>
+				</div>
+			</div>
+			
+			<div class="rodape">
+				<p>ID: xxxxxxxxxxxxxxx</p>
+			</div>
+		</div>
+	</body>
+</html>

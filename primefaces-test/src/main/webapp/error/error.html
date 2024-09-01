@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Erro</title>
+		
+		<style>
+			:root {
+				--background-color-body: #F8F8F8;
+				--color-titulo: #303963;
+				--color-subtitulo: #B1B1B1;
+				--color-subtitulo-footer: #5268C1;
+			}
+			
+			body {
+			    margin: 0;
+			    padding: 0;
+			    font-family: Verdana, sans-serif;
+			    background-color: var(--background-color-body);
+			    display: grid;
+			    place-items: center;
+			    height: 100vh;
+			    color: gray;
+			}
+			
+			.conteudo {
+			    width: 80%;
+			}
+			
+			.erro-titulo {
+			    font-size: 4.5rem;
+			    color: var(--color-titulo);
+			}
+			
+			.erro-sub {
+			    font-size: 2.25rem;
+			    margin: 10px 0 20px 0;
+			    color: var(--color-subtitulo);
+			}
+			
+			.grupo-fluxo {
+				background-color: #EBEBEB;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+				height: 200px;
+			}
+			
+			.grupo-mais-informacao {
+				margin-top: 1rem;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 1em;
+			    font-size: 16px;
+			    background-color: #FFF;
+			    padding: 20px;
+			    line-height: 1.5em;
+			}
+			
+			.grupo-mais-informacao .subtitulo {
+				font-weight: bold;
+				font-size: 20px;
+				color: var(--color-subtitulo-footer);
+			}
+			
+			@media (max-width: 1000px) {
+				.grupo-mais-informacao {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="conteudo">
+			<div class="erro-titulo">Algo deu errado</div>
+			<div class="erro-sub">Ocorreu algo inesperado durante o processo</div>
+			
+			<div class="grupo-fluxo"></div>
+			
+			<div class="grupo-mais-informacao">
+				<div class="ocorrido">
+					<p class="subtitulo">O que aconteceu?</p>
+					<p>Durante o processo de busca da página algo ocorreu que impossibilitou sua apresentação.</p>
+				</div>
+				
+				<div class="solucao">
+					<p class="subtitulo">O que posso fazer?</p>
+					<p>Tente novamente em alguns minutos.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

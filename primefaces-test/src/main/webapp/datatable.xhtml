@@ -18,6 +18,25 @@
 			 .ui-tooltip-arrow {
 			 	display: none !important;
 			 }
+			 
+			 :root {
+			 	--background-color-scrollbar-track: #f1f1f1;
+			 	--background-color-scrollbar-thumb: #c1c1c1;
+			 }
+			 
+			 .ui-datatable-scrollable::-webkit-scrollbar-track {
+			 	background: var(--background-color-scrollbar-track);
+			}
+			
+			.ui-datatable-scrollable::-webkit-scrollbar-thumb {
+				background: var(--background-color-scrollbar-thumb);
+				border: 2px solid var(--background-color-scrollbar-track);
+				border-radius: 10px;
+			}
+			
+			.ui-datatable-scrollable {
+				scrollbar-color: var(--background-color-scrollbar-thumb) var(--background-color-scrollbar-track);
+			}
 		</style>
 		
 		<h:form id="formularioDataTable">
@@ -95,6 +114,8 @@
 			
 			<p:dataTable 
 				var="c" 
+				scrollable="true" 
+				scrollHeight="300" 
 				id="tabelaContatos" 
 				value="#{dataTableBean.contatos}" 
 				emptyMessage="Nenhum contato adicionado!">
